@@ -15,5 +15,16 @@ app.get('/api', function(req,res){
     res.send('api works');
 });
 
+app.use('/test',function(req,res,next){
+    if(req.query.test){
+        next();
+    }else{
+        res.status(401).send();
+    }
+})
+app.get('/test', function(req,res){
+    res.send('test endpoint');
+});
+
 noticiasRoutes(app);
 userRoutes(app);

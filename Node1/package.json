@@ -8,6 +8,7 @@
     "styles": "sass src/sass:styles --no-source-map",
     "tsc": "tsc",
     "build": "gulp",
+    "start": "node",
     "dev": "nodemon"
   },
   "keywords": [
