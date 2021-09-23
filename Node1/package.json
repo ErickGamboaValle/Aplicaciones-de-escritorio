@@ -1,0 +1,27 @@
+{
+  "name": "codes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "sass src/sass:styles --no-source-map",
+    "tsc": "tsc",
+    "build": "gulp",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "ITESO"
+  ],
+  "author": "Erick",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "sass": "^1.38.2",
+    "typescript": "^4.4.2"
+  }
+}
