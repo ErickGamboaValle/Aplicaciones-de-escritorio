@@ -1,0 +1,19 @@
+.container{
+    max-width:1024px;
+    margin: 0 auto;
+}
+
+.Temas{
+    border:solid 1px red;
+}
+
+.Temas > div{
+    float: right;
+    width: 25%;
+}
+
+.Clearfix:after{
+    content:"";
+    display:table;
+    clear:both;
+}
