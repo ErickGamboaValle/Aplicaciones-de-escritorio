@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <link rel="stylesheet" type='text/css' href="/assets/styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo_icon" title="Kamado Nezuko" alt="alternative text" width="5%" height="50%" margin-top="10%" src="assets/Images/Nezuko.png" href=""/>
+        <h1>Practica 2</h1>
+    </header>
+    <div class="container">        
+        <label for="site-search">Search news</label>
+        <input type="search" id="site-search" name="q" aria-label="Search through site content">
+        <div class ="grid clearfix" id="grid"></div>
+        
+    </div>
+    <footer>&copy; ITESO</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/scripts/main.js" type="module"></script>
+
+
+
+    <script id="header-source" type="text/x-handlebars">
+        <h1>{{title}}</h1>
+    </script>
+
+    <script id="grid-source" type="text/x-handlebars">
+        {{#each noticias}}
+            <div class="col-4 tb-col-6 mb-col-8">
+                <img src="{{urlToImage}}" />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Ver más</a>
+            </div>
+        {{/each}}
+    </script>
+</body>
+
+</html>
