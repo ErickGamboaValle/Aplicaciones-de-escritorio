@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITESO API</title>
+    <title>Tequila Chat</title>
     <base href="/">
-    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
 </head>
+
 <body>
-    <h1>API Works!</h1>
+    <h1>Welcome to Tequila Chat</h1>
+    <div>
+        <div id="chatContainer">
+            <!--en vez de texto, serán radio buttons, y cuando se seleccione uno
+            se debe poder ver el historial de los mensajes enviado a cada uno de los chats-->
+            <form>
+                <fieldset>
+                    <legend>Elige un chat</legend>
+                    <label>
+                        <input type="radio" name="color" value="chat1" checked onclick="showchat1()"> chat 1
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="chat2" onclick="showchat2()"> chat 2
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="chat3" onclick="showchat3()"> chat 3
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+        <!--
+            aqui empieza el container donde está el chat
+        -->
+        <div class="hide" id="show1">
+            <p>1</p>
+        </div>
+        <div class="hide" id="show2">
+            <p>2</p>
+        </div>
+        <div class="hide" id="show3">
+            <p>3</p>
+        </div>
+        <!--TODO: 
+            implementar chat rooms
+            Terminar pantallas
+        -->
+    </div>
+    <script type="text/javascript" src="/public/chat.js"></script>
 </body>
+
 </html>

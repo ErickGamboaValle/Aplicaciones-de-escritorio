@@ -53,3 +53,18 @@ MongoClient.connect(DB_HOST, {
         });
     }
 });
+
+
+const { Db } = require('mongodb');
+const mongoose = require('mongoose');
+const uri = "mongodb+srv://Halv:vyHykVpyy08pkAO6@cluster0.kcql9.mongodb.net/Cluster0?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("Salas").collection("Sala1");
+//   client.close();
+// });
+mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true})
+.then((result)=> console.log("connected to db..."))
+.catch((err) => console.log(err));
+
+
