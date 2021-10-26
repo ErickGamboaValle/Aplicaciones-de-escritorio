@@ -24,8 +24,8 @@ const swaggerOptions = {
             version: "1.0.0",
             servers: ['http://localhost:' + port],
             contact: {
-                name: "ISOG",
-                correo: "greenvana14@gmail.com"
+                name: "Halv",
+                correo: "is710115@iteso.mx"
             }
         }
     },
