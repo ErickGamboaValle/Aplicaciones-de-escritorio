@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/public/styles/Login.css"> 
+</head>
+
+<body>
+    <div class="auth_main" >
+        
+        <div class="auth_box-container">
+            <!--
+            <img id="logo_icon" title="Kamado Nezuko" 
+            alt="kawai image" width="100%" height="100%" 
+            margin-top="10%" src="/assets/Images/Nezuko.png" href=""/>-->
+        <h3 class="auth_title">Login</h3>
+        <form method="POST" action="/crear-user" novalidate>
+            <input autoComplete="off"
+             type="text" 
+             name="correo" 
+             class="auth_input"  
+             placeholder="User name"
+             />
+
+            <input type="password" 
+            name="password" 
+            class="auth_input" 
+            placeholder="password"
+            />
+
+            <button 
+                type="submit" 
+                value="submit"
+                class="submitbtn"
+            >
+                Ingresar
+            </button>
+            <div style="margin: 5px;"></div>
+            <Link to="/auth/register" class="link">
+                Create new account
+                </Link>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
