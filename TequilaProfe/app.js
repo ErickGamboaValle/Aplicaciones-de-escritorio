@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'dev') {
     require('dotenv').config();
 }
 
-const port = 3000;
+const port = 3001;
 
 
 const swaggerOptions = {
@@ -245,7 +245,6 @@ app.post('/user', (req, res) => {
         })
         )
         .catch((err) => console.log(err))
-
 })
 
 app.use(router);

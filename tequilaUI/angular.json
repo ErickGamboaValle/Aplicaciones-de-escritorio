@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tequilaUI": {
+    "tequilachat-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tequilaUI",
+            "outputPath": "dist/tequilachat-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,6 +64,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "testing": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -72,10 +86,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tequilaUI:build:production"
+              "browserTarget": "tequilachat-ui:build:production"
             },
             "development": {
-              "browserTarget": "tequilaUI:build:development"
+              "browserTarget": "tequilachat-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +97,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tequilaUI:build"
+            "browserTarget": "tequilachat-ui:build"
           }
         },
         "test": {
@@ -107,5 +121,5 @@
       }
     }
   },
-  "defaultProject": "tequilaUI"
+  "defaultProject": "tequilachat-ui"
 }

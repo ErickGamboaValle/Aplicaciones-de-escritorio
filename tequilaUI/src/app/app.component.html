@@ -1,7 +1,6 @@
-<h1>Hola {{name}}</h1>
-<input type="text" name="name" (keydown)="setValue($event)">
-<button (click)="doOnClick($event)">Click me!</button>
+<app-header></app-header>
 
-<ul>
-  <li *ngFor="let item of books">{{item.title}}</li>
-</ul>
+<h1>Bienvenido {{name}}</h1>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

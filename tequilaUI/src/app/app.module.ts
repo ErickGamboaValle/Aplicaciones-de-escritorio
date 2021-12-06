@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BooksComponent } from './pages/books/books.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { ButtonComponent } from './common/components/button/button.component';
+import { UsersComponent } from './pages/users/users.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PermisoDirective } from './common/directives/permiso.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BooksComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    ButtonComponent,
+    UsersComponent,
+    NotFoundComponent,
+    PermisoDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

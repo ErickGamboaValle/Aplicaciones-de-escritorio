@@ -1,0 +1,16 @@
+<h2>Lista de Libros</h2>
+<form (submit)="saveBook()">
+    <input type="text" name="pelicula" [(ngModel)]="titulo">
+    <button>Guardar</button>
+</form>
+
+<p *ngIf="isError" class="error">No se pudo obtener la lista</p>
+
+<ul *ngIf="!isError">
+    <li *ngFor="let libro of libros">{{libro.title}}</li>
+</ul>
+
+<p *ngIf="libros.length === 0 && !isError && !isLoading">La lista esta vacia</p>
+
+<p *ngIf="isLoading">Cargando...</p>
+<a href="#"></a>

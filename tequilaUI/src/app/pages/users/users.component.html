@@ -1,0 +1,8 @@
+<h2>Lista de usuarios</h2>
+<button >Add user</button>
+
+<ul>
+    <li *ngFor="let user of users">
+        <a routerLink="/books" [queryParams] = "{user:user.id}">{{user.name}}</a>
+    </li>
+</ul>

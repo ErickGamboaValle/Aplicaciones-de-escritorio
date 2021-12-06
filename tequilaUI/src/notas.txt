@@ -1,0 +1,26 @@
+Roles
+====
+1- Admin
+2- Manager
+3- employee
+4- client
+
+
+Recursos
+========
+1. Users
+2. Books
+3. Config
+
+
+Acciones
+========
+1. lectura
+2. escritura
+
+
+RoleRecursoAction
+=================
+1, 2, 1
+2, 1, 1
+3, 1, 2
