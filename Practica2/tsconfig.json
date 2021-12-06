@@ -6,7 +6,7 @@
         "src/scripts/*.spec.ts"
     ],
     "compilerOptions": {
-        "outDir": "scripts",
+        "outDir": "public/assets/scripts",
         "target": "es6"
     }
 }

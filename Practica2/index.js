@@ -4,15 +4,13 @@ const NODE_ENV = process.env.NODE_ENV||'development';
 require('dotenv').config({
     path:`.env.${NODE_ENV}`
 });
-console.log(`api key = `+process.env.APIKEY);//nunca pude importarla hacia el noticia.js
-
 
 const path = require('path');
 const { Console } = require('console');
 
 let app = express();
-app.use(express.static(__dirname +'/public'));
-const port = process.env.PORT || 3000;
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+const port = process.env.PORT || 3001;
 
 app.listen(port, ()=>{
     console.log('App is listening in port: ' + port);

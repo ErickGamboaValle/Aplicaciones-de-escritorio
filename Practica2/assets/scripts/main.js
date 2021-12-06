@@ -1,6 +1,6 @@
 import { Noticia } from './noticia.js';
 
-document.getElementById("site-search").oninput = function () {
+document.getElementById("site-search").onchange = function () {
     const noticia = new Noticia();
     noticia.getAll().then(response => {
         console.log('Noticias', response.data);
@@ -13,5 +13,3 @@ document.getElementById("site-search").oninput = function () {
         console.error('Failed');
     });
 };
-
-
