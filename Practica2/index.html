@@ -13,17 +13,20 @@
     <header>
         <h1>Practica 2</h1>
     </header>
-    <div class="container">        
+    <div class="container">
         <label for="site-search">Search news</label>
-        <input type="search" id="site-search" name="q" aria-label="Search through site content">
-        <div class ="grid clearfix" id="grid"></div>
-        
+        <form action="/noticias" method="get" novalidate>
+            <input type="search" id="site-search" name="q" aria-label="Search through site content">
+            <div class="grid clearfix" id="grid"></div>
+        </form>
+
+
     </div>
     <footer>&copy; ITESO</footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="assets/scripts/main.js" type="module"></script>
+    <!--<script src="assets/scripts/main.js" type="module"></script> -->
 
 
 

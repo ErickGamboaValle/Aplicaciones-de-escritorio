@@ -1,9 +1,9 @@
 {
     "include": [
-        "src/scripts//*.ts"
+        "src/scripts/**/*.ts"
     ],
     "exclude": [
-        "src/scripts/*.spec.ts"
+        "src/scripts**/*.spec.ts"
     ],
     "compilerOptions": {
         "outDir": "public/assets/scripts",
