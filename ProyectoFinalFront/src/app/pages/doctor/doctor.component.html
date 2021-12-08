@@ -1,0 +1,75 @@
+<h1 *ngIf="doctor == undefined">doctor not found</h1>
+<div *ngIf="doctor != undefined" class="d-flex justify-content-center mt-5 mb-5">
+
+  <div class="section">
+    <div class="columns">
+      <div class="column is-4 is-offset-4">
+        <div class="card">
+          <div class="header">
+            <div class="avatar ">
+              <img src="https://i.pravatar.cc/150?img={{imgnum}}" alt="">
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="user-meta has-text-centered">
+              <h3 class="card-header">{{doctor.name}} {{doctor.lastname}}</h3>
+              <h5 class="username text-center">Specialty: {{doctor.specialty}}</h5>
+            </div>
+            <div class="user-bio has-text-centered">
+              <p class="username text-center">Email: {{doctor.email}}</p>
+            </div>
+            <div class="action has-text-centered text-center mb-2" *ngIf="!sessionService.isDoctor && sessionService.isLoggedIn">
+              <button (click)="open(content)" class="button is-small">
+                <i class="fas fa-heartbeat"></i>Appointment
+              </button>
+            </div>
+            <div class="card-footer text-center bg-transparent border-success"><i class="fas fa-heartbeat"></i>Medical Website</div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Appointment details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="form" (ngSubmit)="create()">
+        <div class="form-group">
+          <label>Appointment description</label>
+          <div class="input-group">
+            <input type="text" style="width: 500px; height: 100px; margin-bottom: 15px;" id="purpose"
+              [(ngModel)]="purpose" [ngModelOptions]="{standalone: true}">
+          </div>
+          <p>Appointment day</p>
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+              [footerTemplate]="footerTemplate" #datePicker="ngbDatepicker" [ngModelOptions]="{standalone: true}">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="datePicker.toggle()" type="button"></button>
+            </div>
+          </div>
+          <label style="margin-bottom: 5px;">Appointment time</label>
+          <!-- Timepicker -->
+          <div style="margin-left: 155px;">
+            <ngb-timepicker [(ngModel)]="time" formControlName="time"></ngb-timepicker>
+          </div>
+        </div>
+      </form>
+      <ng-template #footerTemplate>
+        <hr class="my-0">
+        <button class="btn btn-primary btn-sm m-2 float-left" (click)="model = today; datePicker.close()">Today</button>
+        <button class="btn btn-secondary btn-sm m-2 float-right" (click)="datePicker.close()">Close</button>
+      </ng-template>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Cancel click')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" type="submit" (click)="create();c('Cancel click');"><i
+        class="fas fa-heartbeat"></i>Submit</button>
+    </div>
+  </ng-template>
+</div>
